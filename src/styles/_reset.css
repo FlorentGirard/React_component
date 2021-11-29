@@ -129,7 +129,8 @@ table {
 }
 
 /* Reset Button */
-/* button {
+/*
+button {
   border: none;
   background-color: transparent;
   font-family: inherit;
@@ -137,8 +138,8 @@ table {
   line-height: inherit;
   cursor: pointer;
   text-align: inherit;
-} */
-
+}
+/*
 /* Améliorations */
 
 html {
