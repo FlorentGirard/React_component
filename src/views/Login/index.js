@@ -19,49 +19,62 @@ const Login = () => {
         <h2 className="login__subtitle">Déjà client ? </h2>
         <form>
           <div className={classNameRegister}>
-            <Field
-              placeholder="Name"
-              name="nom"
-              label="name"
-              icon="fas fa-user-tie"
-            />
-            <Field
-              placeholder="Prenom"
-              name="prenom"
-              label="prenom"
-              icon="fas fa-user-tie"
-            />
-            <Field
-              placeholder="Ville"
-              name="city"
-              label="prenom"
-              icon="fas fa-city"
-            />
+            <fieldset>
+              <legend className="hideItem"> Identité </legend>
+              <Field
+                placeholder="Name"
+                name="nom"
+                label="name"
+                icon="fas fa-user-tie"
+              />
+
+              <Field
+                placeholder="Prenom"
+                name="prenom"
+                label="prenom"
+                icon="fas fa-user-tie"
+              />
+            </fieldset>
+            <fieldset>
+              <legend className="hideItem">Lieux de résidence</legend>
+              <Field
+                placeholder="Ville"
+                name="city"
+                label="prenom"
+                icon="fas fa-city"
+              />
+            </fieldset>
           </div>
 
-          <Field
-            placeholder="Email"
-            name="email"
-            label="email"
-            type="email"
-            icon="fas fa-envelope"
-          />
-          <Field
-            placeholder="Mot de passe"
-            name="passworld"
-            label="passworld"
-            type="passworld"
-            icon="fas fa-lock"
-          />
-          <div className={classNameRegister}>
+          <fieldset>
+            <legend className="hideItem">E-mail</legend>
             <Field
-              placeholder="Confirme mot de passe"
+              placeholder="Email"
+              name="email"
+              label="email"
+              type="email"
+              icon="fas fa-envelope"
+            />
+          </fieldset>
+          <fieldset>
+            <legend className="hideItem">Mot de passe</legend>
+            <Field
+              placeholder="Mot de passe"
               name="passworld"
               label="passworld"
               type="passworld"
               icon="fas fa-lock"
             />
-          </div>
+            <div className={classNameRegister}>
+              <Field
+                placeholder="Confirme mot de passe"
+                name="passworld"
+                label="passworld"
+                type="passworld"
+                icon="fas fa-lock"
+              />
+            </div>
+          </fieldset>
 
           <Link to="#" className="login__forgotPassworld">
             Mot de passe oublié ?
