@@ -9,7 +9,7 @@ const Field = ({ type, placeholder, name, icon, isLeft}) => {
   
     return (
       <div className="field">
-        <label className="field__label"> {placeholder}</label>
+         <label className="field__label"> {placeholder}</label> 
         <div className={className}>
           <input
             placeholder={placeholder}

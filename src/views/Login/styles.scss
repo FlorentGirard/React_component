@@ -1,0 +1,60 @@
+@import "../../styles/vars";
+
+.login {
+  background-color: #efefef;
+  height: 100vh;
+  width: 100vw;
+  padding: $gutter / 2;
+
+  &__container {
+    max-width: 600px;
+    background-color: $light-color;
+    border: 1px solid $light-color;
+    margin: 0 auto;
+    padding: 0 $gutter/2;
+  }
+
+  &__title {
+    text-align: center;
+    padding: $gutter 0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+  }
+
+  &__forgotPassworld {
+    font-size: 12px;
+    display: block;
+    text-align: right;
+    padding-bottom: $gutter / 2;
+  }
+  // Register
+
+  &__button {
+    width: 100%;
+    padding: $gutter;
+    margin-bottom: $gutter;
+    font-size: 14px;
+
+    &--login {
+      color: $light-color;
+      background-color: $color-button;
+      border: 1px solid $color-button;
+    }
+    &--register {
+      color: $color-button;
+      background-color: $light-color;
+      border: 1px solid $color-button;
+      margin-top: $gutter;
+    }
+  }
+
+  &__registerContainer {
+    margin-top: 0.1rem;
+    background-color: #f7f7f7;
+    border: 1px solid #f7f7f7;
+  }
+}
