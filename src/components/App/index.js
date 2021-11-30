@@ -1,5 +1,9 @@
+//import npm
+import { Routes, Route } from "react-router-dom";
+
 //import Components
-import Field from '../Field'
+import Login from '../../views/Login'
+
 
 //css
 import "bulma/css/bulma.min.css";
@@ -8,8 +12,10 @@ import './App.scss';
 function App() {
   return (
     <div className="app">
-      <Field placeholder="Login" name="login" icon="fas fa-envelope" />
-      <Field placeholder="Test" name="login" />
+    
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
       
     </div>
   );
