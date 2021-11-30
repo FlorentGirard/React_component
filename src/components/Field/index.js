@@ -9,7 +9,7 @@ const Field = ({ type, placeholder, name, icon, label, isHide}) => {
 
   
     const className = classNames( {'control has-icons-left' : icon})
-    const classNameHide = classNames({'field__label--hide' : isHide})
+    const classNameHide = classNames({'hideItem' : isHide})
   
     return (
       <div className="field">

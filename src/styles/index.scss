@@ -1,2 +1,9 @@
 @import "reset"; //sera obsoléte a l'avenir, react-app ne prend pas en compte @use
 @import "vars";
+
+//Classe reutissable
+
+.hideItem {
+  position: absolute;
+  opacity: 0;
+}
