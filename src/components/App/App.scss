@@ -1,5 +1,6 @@
 @import "../../styles/vars";
 
-.app {
-  margin: $gutter * 3;
+html {
+  //Hide scoll with bulma
+  overflow-y: auto !important;
 }
