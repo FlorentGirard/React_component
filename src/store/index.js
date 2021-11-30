@@ -1,6 +1,6 @@
 //import npm
 import { createStore, /*applyMiddleware,*/ compose } from "redux";
-import reducer from "src/reducers";
+import reducer from "../reducers";
 
 //Middelware
 //import apiMiddleware from "../middlewares/api";

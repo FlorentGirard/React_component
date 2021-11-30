@@ -1,6 +1,7 @@
 const initialState = {
  emailValue: '',
- passwordValue: ''   
+ passwordValue: '' ,
+ isRegister: true
 };
 
 const reducer = (state = initialState, action = {}) => {

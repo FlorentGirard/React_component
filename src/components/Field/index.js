@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
+
 import "./styles.scss";
 
 // isHide gére l'affichage du label par defaul il est caché 
 const Field = ({ type, placeholder, name, icon, label, isHide}) => {
+
+  
     const className = classNames( {'control has-icons-left' : icon})
     const classNameHide = classNames({'field__label--hide' : isHide})
   
