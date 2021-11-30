@@ -3,19 +3,20 @@ import classNames from "classnames";
 
 import "./styles.scss";
 
-
-const Field = ({ type, placeholder, name, icon, isLeft}) => {
+// isHide gére l'affichage du label par defaul il est caché 
+const Field = ({ type, placeholder, name, icon, label, isHide}) => {
     const className = classNames( {'control has-icons-left' : icon})
+    const classNameHide = classNames({'field__label--hide' : isHide})
   
     return (
       <div className="field">
-         <label className="field__label"> {placeholder}</label> 
+         <label className={classNameHide}> {label}</label> 
         <div className={className}>
           <input
             placeholder={placeholder}
             name={name}
             type={type}
-            className="input "
+            className="input"
           />
           {icon && (
             <span className="icon is-small is-left">
@@ -30,7 +31,8 @@ const Field = ({ type, placeholder, name, icon, isLeft}) => {
 Field.defaultProps = {
   type: "text",
   placeholder: "",
-  isLeft: true
+  isHide: true
+ 
 };
 
 Field.propTypes = {
@@ -38,7 +40,9 @@ Field.propTypes = {
   placeholder: PropTypes.string,
   name: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  isLeft: PropTypes.bool
+  label: PropTypes.string.isRequired,
+  isHide: PropTypes.bool
+  
 };
 
 export default Field;
