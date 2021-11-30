@@ -13,12 +13,14 @@ const Login = () => (
         <Field
           placeholder="Email"
           name="email"
+          label="email"
           type="email"
           icon="fas fa-envelope"
         />
         <Field
           placeholder="Mot de passe"
           name="passworld"
+          label="passworld"
           type="passworld"
           icon="fas fa-lock"
         />
