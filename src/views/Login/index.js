@@ -1,50 +1,58 @@
 import { Link } from "react-router-dom";
 import classNames from "classnames";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 
 
 import Field from "../../components/Field";
 
 import "./styles.scss";
+import { setUserPage } from "../../actions/user";
 
 const Login = () => {
   const isRegister = useSelector((state) => state.user.isRegister)
+  const dispatch = useDispatch();
   console.log(isRegister)
-  const classNameRegister = classNames({ "login__input--hide": isRegister });
+  const classNameRegister = classNames({ "login__input--hide" : isRegister });
+  const classNameRegisterHide = classNames({'displayItem' : !isRegister});
+
+ 
+
+  const handleViews = () => {
+    console.log('ckick')
+    dispatch(setUserPage())
+  }
   return (
     <div className="login">
       <div className="login__container">
         <h1 className="login__title">Login </h1>
         <h2 className="login__subtitle">Déjà client ? </h2>
         <form>
-          <div className={classNameRegister}>
-            <fieldset>
-              <legend className="hideItem"> Identité </legend>
-              <Field
-                placeholder="Name"
-                name="nom"
-                label="name"
-                icon="fas fa-user-tie"
-              />
+          <fieldset className={classNameRegister}>
+            <legend className="hideItem"> Identité </legend>
+            <Field
+              placeholder="Name"
+              name="nom"
+              label="name"
+              icon="fas fa-user-tie"
+            />
 
-              <Field
-                placeholder="Prenom"
-                name="prenom"
-                label="prenom"
-                icon="fas fa-user-tie"
-              />
-            </fieldset>
-            <fieldset>
-              <legend className="hideItem">Lieux de résidence</legend>
-              <Field
-                placeholder="Ville"
-                name="city"
-                label="prenom"
-                icon="fas fa-city"
-              />
-            </fieldset>
-          </div>
+            <Field
+              placeholder="Prenom"
+              name="prenom"
+              label="prenom"
+              icon="fas fa-user-tie"
+            />
+          </fieldset>
+          <fieldset className={classNameRegister}>
+            <legend className="hideItem">Lieux de résidence</legend>
+            <Field
+              placeholder="Ville"
+              name="city"
+              label="prenom"
+              icon="fas fa-city"
+            />
+          </fieldset>
 
           <fieldset>
             <legend className="hideItem">E-mail</legend>
@@ -65,6 +73,7 @@ const Login = () => {
               type="passworld"
               icon="fas fa-lock"
             />
+
             <div className={classNameRegister}>
               <Field
                 placeholder="Confirme mot de passe"
@@ -76,13 +85,15 @@ const Login = () => {
             </div>
           </fieldset>
 
-          <Link to="#" className="login__forgotPassworld">
-            Mot de passe oublié ?
-          </Link>
-          {/* button qui envoie donné */}
-          <button className="login__button login__button--login">
-            Se connecter
-          </button>
+          <div className={classNameRegisterHide}>
+            <Link to="#" className="login__forgotPassworld">
+              Mot de passe oublié ?
+            </Link>
+            {/* button qui envoie donné */}
+            <button className="login__button login__button--login">
+              Se connecter
+            </button>
+          </div>
           <div className={classNameRegister}>
             <button className="login__button login__button--login ">
               Créer un compte
@@ -94,11 +105,19 @@ const Login = () => {
         <h2 className="login__subtitle">Nouveau client ? </h2>
 
         {/* button pour gérer l'affichage  */}
-        <button className="login__button login__button--register ">
-          Créer un compte
-        </button>
+        <div className={classNameRegisterHide}>
+          <button
+            className="login__button login__button--register"
+            onClick={handleViews}
+          >
+            Créer un compte
+          </button>
+        </div>
         <div className={classNameRegister}>
-          <button className="login__button login__button--register ">
+          <button
+            className="login__button login__button--register "
+            onClick={handleViews}
+          >
             Se connecter
           </button>
         </div>
