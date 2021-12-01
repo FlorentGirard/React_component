@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 
 import Field from "../../components/Field";
+import LoginButton from "../../components/Button/LoginButton";
 
 import "./styles.scss";
 import { setUserPage } from "../../actions/user";
@@ -19,9 +20,10 @@ const Login = () => {
  
 
   const handleViews = () => {
-    console.log('ckick')
     dispatch(setUserPage())
   }
+
+  
   return (
     <div className="login">
       <div className="login__container">
@@ -90,14 +92,10 @@ const Login = () => {
               Mot de passe oublié ?
             </Link>
             {/* button qui envoie donné */}
-            <button className="login__button login__button--login">
-              Se connecter
-            </button>
+            <LoginButton nameButton="Se connecter" isButtonForm />
           </div>
           <div className={classNameRegister}>
-            <button className="login__button login__button--login ">
-              Créer un compte
-            </button>
+            <LoginButton nameButton="Créer un compte" isButtonForm />
           </div>
         </form>
       </div>
@@ -106,20 +104,11 @@ const Login = () => {
 
         {/* button pour gérer l'affichage  */}
         <div className={classNameRegisterHide}>
-          <button
-            className="login__button login__button--register"
-            onClick={handleViews}
-          >
-            Créer un compte
-          </button>
+          <LoginButton nameButton="Créer un compte" onClick={handleViews} />
         </div>
+        
         <div className={classNameRegister}>
-          <button
-            className="login__button login__button--register "
-            onClick={handleViews}
-          >
-            Se connecter
-          </button>
+          <LoginButton nameButton="Se connecter" onClick={handleViews} />
         </div>
       </div>
     </div>
