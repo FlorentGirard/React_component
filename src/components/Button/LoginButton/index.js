@@ -4,7 +4,8 @@ import classNames from "classnames";
 import './styles.scss';
 
 const LoginButton = ({ nameButton, isButtonForm, onClick}) => {
-  const handleClick = () => {
+  const handleClick = (evt) => {
+    evt.preventDefault();
     onClick();
   };
 
@@ -15,9 +16,7 @@ const LoginButton = ({ nameButton, isButtonForm, onClick}) => {
   );
 
   return (
-    /*  <div className="loginbutton">
-    <button className={classNameButton}>{nameButton}</button>
-  </div> */
+
     <button className={classNameButton} onClick={handleClick}>
       {nameButton}
     </button>

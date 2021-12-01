@@ -23,6 +23,16 @@ const Login = () => {
     dispatch(setUserPage())
   }
 
+  const handleRegister = (evt) => {
+    evt.preventDefault()
+    console.log('register')
+  }
+
+  const handleLogin = (evt) => {
+    evt.preventDefault();
+    console.log('login')
+  }
+
   
   return (
     <div className="login">
@@ -94,12 +104,11 @@ const Login = () => {
               Mot de passe oublié ?
             </Link>
             {/* button qui envoie donné */}
-            <LoginButton nameButton="Se connecter" isButtonForm />
+            <LoginButton nameButton="Se connecter" isButtonForm onClick={handleLogin}/>
           </div>
           <div className={classNameRegister}>
-            <LoginButton nameButton="Créer un compte" isButtonForm />
+            <LoginButton nameButton="Créer un compte" isButtonForm onClick={handleRegister}/>
           </div>
-       
         </form>
       </div>
       <div className=" login__container login__registerContainer">
