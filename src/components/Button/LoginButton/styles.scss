@@ -1,32 +1,34 @@
-@import "../../styles/vars";
-&__button {
-  width: 100%;
-  padding: $gutter;
-  border-radius: 10px;
-  margin-bottom: $gutter;
-  font-size: 14px;
-  cursor: pointer;
+@import "../../../styles/vars";
+.loginbutton {
+  &__button {
+    width: 100%;
+    padding: $gutter;
+    border-radius: 10px;
+    margin-bottom: $gutter;
+    font-size: 14px;
+    cursor: pointer;
 
-  &--login {
-    color: $light-color;
-    background-color: $color-button;
-    border: 1px solid $color-button;
-
-    &:hover {
-      opacity: 0.8;
-      transition: all 0.3s ease-in-out;
-    }
-  }
-  &--register {
-    color: $color-button;
-    background-color: $light-color;
-    border: 1px solid $color-button;
-    margin-top: $gutter;
-
-    &:hover {
+    &--login {
       color: $light-color;
       background-color: $color-button;
-      transition: all 0.3s ease-in-out;
+      border: 1px solid $color-button;
+
+      &:hover {
+        opacity: 0.8;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    &--register {
+      color: $color-button;
+      background-color: $light-color;
+      border: 1px solid $color-button;
+      margin-top: $gutter;
+
+      &:hover {
+        color: $light-color;
+        background-color: $color-button;
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
 }
