@@ -14,7 +14,7 @@ const Login = () => {
   const isRegister = useSelector((state) => state.user.isRegister)
   const dispatch = useDispatch();
   console.log(isRegister)
-  const classNameRegister = classNames({ "login__input--hide" : isRegister });
+  const classNameRegister = classNames({ "displayItem": isRegister });
   const classNameRegisterHide = classNames({'displayItem' : !isRegister});
 
  
@@ -28,7 +28,9 @@ const Login = () => {
     <div className="login">
       <div className="login__container">
         <h1 className="login__title">Login </h1>
-        <h2 className="login__subtitle">Déjà client ? </h2>
+        <h2 className="login__subtitle">
+          {isRegister ? "Déjà client ?" : "Nouveau client ?"}
+        </h2>
         <form>
           <fieldset className={classNameRegister}>
             <legend className="hideItem"> Identité </legend>
@@ -72,7 +74,7 @@ const Login = () => {
               placeholder="Mot de passe"
               name="passworld"
               label="passworld"
-              type="passworld"
+              type="password"
               icon="fas fa-lock"
             />
 
@@ -81,7 +83,7 @@ const Login = () => {
                 placeholder="Confirme mot de passe"
                 name="passworld"
                 label="passworld"
-                type="passworld"
+                type="password"
                 icon="fas fa-lock"
               />
             </div>
@@ -97,16 +99,19 @@ const Login = () => {
           <div className={classNameRegister}>
             <LoginButton nameButton="Créer un compte" isButtonForm />
           </div>
+       
         </form>
       </div>
       <div className=" login__container login__registerContainer">
-        <h2 className="login__subtitle">Nouveau client ? </h2>
+        <h2 className="login__subtitle">
+          {isRegister ? "Nouveau client ?" : "Dejà client ?"}
+        </h2>
 
         {/* button pour gérer l'affichage  */}
         <div className={classNameRegisterHide}>
           <LoginButton nameButton="Créer un compte" onClick={handleViews} />
         </div>
-        
+
         <div className={classNameRegister}>
           <LoginButton nameButton="Se connecter" onClick={handleViews} />
         </div>
