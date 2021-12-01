@@ -12,14 +12,14 @@ const Field = ({ type, placeholder, name, icon, label, isHide}) => {
     const classNameHide = classNames({'hideItem' : isHide})
   
     return (
-      <div className="field">
+      <div className="fields">
          <label className={classNameHide}> {label}</label> 
         <div className={className}>
           <input
             placeholder={placeholder}
             name={name}
             type={type}
-            className="input"
+            className="input fields__input"
           />
           {icon && (
             <span className="icon is-small is-left">

@@ -23,6 +23,7 @@
 
   &__subtitle {
     font-weight: 600;
+    margin: $gutter 0;
   }
 
   &__forgotPassworld {
@@ -32,7 +33,7 @@
     padding-bottom: $gutter / 2;
   }
   // Register
-
+  /* 
   &__button {
     width: 100%;
     padding: $gutter;
@@ -62,8 +63,8 @@
         background-color: $color-button;
         transition: all 0.3s ease-in-out;
       }
-    }
-  }
+    } 
+  }*/
 
   &__registerContainer {
     margin-top: 0.1rem;
